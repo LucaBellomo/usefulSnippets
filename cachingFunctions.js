@@ -18,3 +18,14 @@ function cached(fn){
     return cache[str]
   }
 }
+
+// EXAMPLE
+
+function compute(str) {
+  console.log('2000s have passed');
+  return 'the result';
+}
+
+const cachedCompute = cached(compute);
+cachedCompute('stringa'); // '2000s have passed' 'the result'
+cachedCompute('stringa'); // 'the result'

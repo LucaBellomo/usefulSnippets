@@ -3,7 +3,7 @@ const pipe = (...functions) => {
   return functions.reduce((acc, current) => current(acc));
 }
 
-const double = x => x * x;
+const square = x => x * x;
 
-const result = pipe(double(2), double, double);
+const result = pipe(square(2), square, square);
 console.log(result); // 256

@@ -1,7 +1,6 @@
-const pipe = (init, ...functions) => {
-  if (!init) throw new Error('The function pipe needs some arguments');
-  if (functions.length === 0) return init;
-  return functions.reduce((acc, current) => current(acc), init);
+const pipe = (...functions) => {
+  if (functions.length === 0) throw new Error('The function pipe needs some arguments');
+  return functions.reduce((acc, current) => current(acc));
 }
 
 const double = x => x * x;
